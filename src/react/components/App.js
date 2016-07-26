@@ -14,9 +14,7 @@ export default class App extends React.Component {
 
     if (!notes) notes = new Array()
     else notes = JSON.parse(notes)
-
-    debugger
-
+      
     return { notes }  
   }
 

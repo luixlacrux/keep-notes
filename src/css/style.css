@@ -132,12 +132,18 @@ body {
             color: rgba(0, 0, 0, 0.8);
         }
 
+.grid {
+    position: relative;
+}
+
 .note {
     display: block;
     float: left;
     width: 25%;
     padding: 8px;
     box-sizing: border-box;
+    position: absolute;
+    transition: top 0.5s, left 0.5s;
 }
 
 .note-text {
@@ -180,9 +186,3 @@ body {
         margin: 0 8px;
         color: rgba(255, 255, 255, 0.8);
     }
-
-p.text-shortest { font-size: 48px; font-weight: 100; }
-p.text-short { font-size: 36px; font-weight: 100; }
-p.text-medium { font-size: 24px; font-weight: 300; }
-p.text-long { font-size: 18px; }
-p.text-longest { font-size: 14px; }

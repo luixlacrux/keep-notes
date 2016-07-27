@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 
 export default class Note extends React.Component {
 
@@ -13,6 +14,19 @@ export default class Note extends React.Component {
       return 'text-short'
 
     return 'text-shortest'
+  }
+
+  setPosition (top, column) {
+    let element = ReactDOM.findDOMNode(this)
+    element.style.top = `${top}px`
+    element.style.left = `${column * 25}%`
+  }
+
+  getHeight () {
+    let element = ReactDOM.findDOMNode(this)
+    let computedStyle = window.getComputedStyle(element)
+    let height = computedStyle.getPropertyValue('height')
+    return parseInt(height)
   }
 
   render () {

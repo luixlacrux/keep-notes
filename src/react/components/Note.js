@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import NoteActions from '../actions/NoteActions'
 
 export default class Note extends React.Component {
 
@@ -29,6 +30,10 @@ export default class Note extends React.Component {
     return parseInt(height)
   }
 
+  remove () {
+    NoteActions.remove(this.props.id)
+  }
+
   render () {
     return (
       <div className="note">
@@ -39,7 +44,7 @@ export default class Note extends React.Component {
           </p>
         </div>
         <div className="note-toolbar">
-          <a className="note-btn-delete"></a>
+          <a className="note-btn-delete" onClick={this.remove.bind(this)}></a>
         </div>
       </div>
     )

@@ -1,4 +1,5 @@
 import React from 'react'
+import NoteActions from '../actions/NoteActions'
 
 export default class Form extends React.Component {
   constructor (props) {
@@ -26,7 +27,8 @@ export default class Form extends React.Component {
       text: this.refs.text.value
     }
 
-    this.props.onSave(note) // send the note to controller view
+    NoteActions.create(note.title, note.text)
+
     this.clean() // empty form
     this.close() // close form
   }

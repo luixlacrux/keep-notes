@@ -1,37 +1,27 @@
 import React from 'react'
 import Form from './Form'
 import Grid from './Grid'
+import NoteActions from '../actions/NoteActions'
+import NoteStore from '../stores/NoteStore'
 
 export default class App extends React.Component {
   constructor (props) {
     super(props)
-    this.state = this.initState()
-    this.onSave = this.onSave.bind(this)
+    this.state = { notes: [] }
   }
 
-  initState () {
-    let notes = window.localStorage.getItem('notes')
+  componentDidMount () {
+    NoteStore.on('change', () => {
+      this.setState({ notes: NoteStore.getAll() })
+    })
 
-    if (!notes) notes = new Array()
-    else notes = JSON.parse(notes)
-      
-    return { notes }  
+    NoteActions.read()
   }
-
-  onSave (note) {
-    let notes = this.state.notes.slice()
-
-    notes.unshift(note) // insert new note
-    this.setState({ notes }) // change state
-    notes = JSON.stringify(notes) // encode notes
-
-    window.localStorage.setItem('notes', notes) // save note in localStorage
-  }
-
+ 
   render () {
     return (
       <div id="wrapper">
-        <Form onSave={this.onSave}/>
+        <Form />
         <Grid notes={this.state.notes}/>
       </div>
     )

@@ -1,51 +1,33 @@
+import firebase from 'firebase'
 import AppDispatcher from '../dispatcher/AppDispatcher'
+import config from '../config'
 
-function loadDataBase () {
-  let notes = window.localStorage.getItem('notes')
-
-  if(!notes) notes = new Array()
-  else notes = JSON.parse(notes)
-
-  return notes
-}
-
-function saveDataBase (notes) {
-  window.localStorage.setItem('notes', JSON.stringify(notes))
-}
+const mainApp = firebase.initializeApp(config)
+const noteRef = mainApp.database().ref('notes')
 
 class NoteActions {
 
   read () {
-    let notes = loadDataBase()
-    AppDispatcher.dispatch({ type: 'READ', notes })
+    noteRef.on('child_added', snapshot => {
+      let note = snapshot.val()
+      note.id = snapshot.key
+
+      AppDispatcher.dispatch({ type: 'CREATE', note })
+    })
+
+    noteRef.on('child_removed', snapshot => {
+      let id  = snapshot.key
+
+      AppDispatcher.dispatch({ type: 'DELETE', id })
+    })
   }
 
   create (title, text) {
-    let id = new Date().getTime()
-
-    let note = { id, title, text }
-
-    let notes = loadDataBase()
-
-    notes.unshift(note)
-    saveDataBase(notes)
-
-    AppDispatcher.dispatch({ type: 'CREATE', note })
+    noteRef.push({ title, text })
   }
 
   remove (id) {
-    let notes = loadDataBase()
-
-    for (let idx of Object.keys(notes)) {
-      if (notes[idx].id === id) {
-        notes.splice(idx, 1)
-
-        saveDataBase(notes)
-        break
-      }
-    }
-
-    AppDispatcher.dispatch({ type: 'DELETE', id })
+    noteRef.child(id).set(null)
   }
 }
 

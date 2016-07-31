@@ -4,11 +4,9 @@
   "description": "An simple app to management of notes ",
   "main": "js/app.js",
   "scripts": {
-    "public": "mkdir -p public/js",
-    "files": "npm run public && cp -r src/css public && cp src/index.html public",
-    "build": "browserify -t babelify ./src/react/app.js -o ./public/js/app.js",
+    "build": "gulp default",
     "server": "node server",
-    "start": "npm run files && npm run build && npm run server"
+    "start": "npm run build && npm run server"
   },
   "author": "@luixlacrux > Luis Lacruz",
   "license": "MIT",
@@ -22,5 +20,18 @@
     "flux": "^2.1.1",
     "react": "^15.2.1",
     "react-dom": "^15.2.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-data": "^1.2.1",
+    "gulp-environments": "^0.1.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-react": "^3.1.0",
+    "gulp-stylus": "^2.5.0",
+    "gulp-uglify": "^1.5.4",
+    "lodash.assign": "^4.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
   }
 }

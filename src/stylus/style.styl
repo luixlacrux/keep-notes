@@ -1,0 +1,190 @@
+@import url('//fonts.googleapis.com/css?family=Roboto:500')
+@import url('//fonts.googleapis.com/css?family=Roboto+Slab:300,400')
+@import url('//fonts.googleapis.com/css?family=Roboto+Condensed:700')
+@font-face
+  font-family: 'icons'
+  src: url('data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SAoEAAAC8AAAAYGNtYXDmPuayAAABHAAAAFxnYXNwAAAAEAAAAXgAAAAIZ2x5ZrjisKIAAAGAAAABJGhlYWQF8aIcAAACpAAAADZoaGVhB0IDxwAAAtwAAAAkaG10eA4AAUAAAAMAAAAAGGxvY2EAugCCAAADGAAAAA5tYXhwAA0AOAAAAygAAAAgbmFtZZlKCfsAAANIAAABhnBvc3QAAwAAAAAE0AAAACAAAwNVAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADmAgPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAQAAAAAwACAACAAQAAQAg5gDmAv/9//8AAAAAACDmAOYC//3//wAB/+MaBBoDAAMAAQAAAAAAAAAAAAAAAAABAAH//wAPAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAYAawByA4AC6wAMABkAJgArADAANQAAEyIGFRQWMzI2NTQmIxEiBhUUFjMyNjU0JiMRIgYVFBYzMjY1NCYjFyE1IRURITUhFREVITUhqxslJRsaJiYaGyUlGxomJhoYISEYFyIiF4ACVf2rAlX9qwJV/asB6yYaGyUlGxomAQAmGhslJRsaJv35IhcYISEYFyJkVVUBAFVVAVVVVQAAAAACANUAKwMrAysACgATAAAlFBYzITI2NREhEQEjJyMHIxUhNQEAMiMBViMy/gACK5Yq1iqWAlaAIzIyIwIA/gACgCsrVVUAAAABAAAAAQAAdz+CW18PPPUACwQAAAAAANGprvoAAAAA0amu+gAAAAADgAMrAAAACAACAAAAAAAAAAEAAAPA/8AAAAQAAAAAAAOAAAEAAAAAAAAAAAAAAAAAAAAGBAAAAAAAAAAAAAAAAgAAAAQAAGsEAADVAAAAAAAKABQAHgBuAJIAAAABAAAABgA2AAYAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEABwAAAAEAAAAAAAIABwBgAAEAAAAAAAMABwA2AAEAAAAAAAQABwB1AAEAAAAAAAUACwAVAAEAAAAAAAYABwBLAAEAAAAAAAoAGgCKAAMAAQQJAAEADgAHAAMAAQQJAAIADgBnAAMAAQQJAAMADgA9AAMAAQQJAAQADgB8AAMAAQQJAAUAFgAgAAMAAQQJAAYADgBSAAMAAQQJAAoANACkaWNvbW9vbgBpAGMAbwBtAG8AbwBuVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwaWNvbW9vbgBpAGMAbwBtAG8AbwBuaWNvbW9vbgBpAGMAbwBtAG8AbwBuUmVndWxhcgBSAGUAZwB1AGwAYQByaWNvbW9vbgBpAGMAbwBtAG8AbwBuRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==')
+  format('truetype')
+  font-weight: normal
+  font-style: normal
+
+[class*="-btn-"]
+  font-family: 'icons'
+  speak: none
+  font-style: normal
+  font-weight: normal
+  font-variant: normal
+  text-transform: none
+  text-align: center
+  font-size: 22px
+  vertical-align: middle
+  line-height: 32px
+  width: 32px
+  height: 32px
+  display: inline-block
+  cursor: pointer
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+[class*="-btn-delete"]:before
+  content: "\e602"
+
+[class*="-btn-list"]:before
+  content: "\e600"
+
+body
+  background: #e8e8e8
+  font-family: 'Roboto Slab'
+  color: rgba(0, 0, 0, 0.8)
+
+#wrapper
+  max-width: 1040px
+  margin: 0 auto
+  padding-top: 30px
+
+::-webkit-input-placeholder
+  opacity: 1
+  color: rgba(0, 0, 0, 0.5)
+
+:-moz-placeholder
+  opacity: 1
+  color: rgba(0, 0, 0, 0.5)
+
+::-moz-placeholder
+  opacity: 1
+  color: rgba(0, 0, 0, 0.5)
+
+:-ms-input-placeholder
+  opacity: 1
+  color: rgba(0, 0, 0, 0.5)
+
+:input-placeholder
+  opacity: 1
+  color: rgba(0, 0, 0, 0.5)
+
+.addnote
+  width: 582px
+  background: #fff
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.08)
+  margin: 0 auto 30px
+  padding: 15px
+
+.addnote-title,
+.addnote-text
+  display: block
+  border: 0
+  margin: 0
+  padding: 0
+  width: 100%
+
+.addnote-title
+  font-family: 'Roboto Condensed'
+  font-weight: bold
+  font-size: 17px
+  line-height: 23px
+  display: none
+
+.addnote.open .addnote-title
+  display: block
+
+.addnote-text
+  font-family: 'Roboto Slab'
+  font-size: 14px
+  line-height: 19px
+  resize: none
+  height: 19px
+
+.addnote.open .addnote-text
+  padding: 12px 0 15px
+
+.addnote-toolbar
+  line-height: 37px
+  padding: 12px 0 4px
+  margin: 0 0 -15px -15px
+  display: none
+
+.addnote.open .addnote-toolbar
+  display: block
+
+.addnote-toolbar button
+  font-family: 'Roboto'
+  text-transform: uppercase
+  font-size: 13px
+  font-weight: 500
+  float: right
+  border: 0
+  margin: 0
+  padding: 5px 14px
+  border-radius: 3px
+  background: transparent
+
+.addnote-toolbar button:hover
+  background: rgba(0, 0, 0, 0.08)
+  cursor: pointer
+
+.addnote-toolbar a
+  margin: 0 8px
+  color: rgba(0, 0, 0, 0.55)
+
+.addnote-toolbar a:hover
+  color: rgba(0, 0, 0, 0.8)
+
+.grid
+  position: relative
+
+.note
+  display: block
+  float: left
+  width: 25%
+  padding: 8px
+  box-sizing: border-box
+  position: absolute
+  transition: top 0.5s, left 0.5s
+
+.note-text
+  background: #fff
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.08)
+  padding: 15px 15px 60px
+  font-weight: 300
+
+.note:hover .note-text
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3)
+
+.note-text p
+  margin: 0
+  word-wrap: break-word
+
+.note-text p.text-shortest
+  font-size: 48px
+  font-weight: 100
+
+.note-text p.text-short
+  font-size: 36px
+  font-weight: 100
+
+.note-text p.text-medium
+  font-size: 24px
+  font-weight: 300
+
+.note-text p.text-long
+  font-size: 18px
+
+.note-text p.text-longest
+  font-size: 14px
+
+.note-toolbar
+  padding: 4px 0
+  line-height: 37px
+  height: 37px
+  margin: -45px 0 0
+  background: rgba(0, 0, 0, 0.25)
+  opacity: 0
+  transition: opacity 0.218s ease-in
+
+.note:hover .note-toolbar
+  opacity: 1
+
+.note-toolbar a
+  margin: 0 8px
+  color: rgba(255, 255, 255, 0.8)
+
